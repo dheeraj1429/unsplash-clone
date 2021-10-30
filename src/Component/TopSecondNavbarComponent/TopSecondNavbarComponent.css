@@ -1,0 +1,21 @@
+.SecondNavbarDiv {
+  display: flex;
+  align-items: center;
+}
+
+.SecondNavbarDiv ul {
+  display: flex;
+  padding: 1rem 1rem 0;
+}
+
+.SecondNavbarDiv li {
+  list-style: none;
+  color: var(--loveGray);
+  margin-right: 1.5rem;
+  height: auto;
+  padding-bottom: 1.5rem;
+}
+
+.SecondNavbarDiv .active {
+  border-bottom: 2px solid var(--smoothGray);
+}

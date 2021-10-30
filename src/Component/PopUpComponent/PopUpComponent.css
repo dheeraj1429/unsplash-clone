@@ -1,0 +1,38 @@
+.MenuDiv {
+  position: relative;
+}
+
+.MenuInner {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 2px;
+  top: 70px;
+  background-color: var(--mainColor);
+  border-radius: 5px;
+  box-shadow: 0 8px 16px #00000029;
+  transform: scale(0);
+  transition: all 0.2s ease;
+  padding: 2rem 3rem;
+}
+
+.hideMenu {
+  transform: scale(0.9) translate(10%, -10%);
+}
+
+.ArrowLine {
+  width: 0px;
+  height: 0px;
+  border: 10px solid;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: var(--mainColor);
+  position: absolute;
+  top: -20px;
+  right: 25px;
+}
+
+.PopUpInnerContent {
+  display: flex;
+}
