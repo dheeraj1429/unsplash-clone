@@ -1,10 +1,10 @@
 import React from "react";
 import "./SearchBarComponent.css";
 
-function SearchBarComponent() {
+function SearchBarComponent(props) {
   return (
     <div className="SearchInputDiv">
-      <div className="SearchDivInner">
+      <div className={props.class ? `SearchDivInner ${props.class}` : "SearchDivInner"}>
         <div className="SearchIconDiv">
           <i class="fas fa-search"></i>
         </div>

@@ -1,8 +1,12 @@
 import React from "react";
-import TopNavbarComponent from "../../Component/TopNavbarComponent/TopNavbarComponent";
+import BannerComponent from "../../Component/BannerComponent/BannerComponent";
 
 function HomePage() {
-  return <h1></h1>;
+  return (
+    <>
+      <BannerComponent />
+    </>
+  );
 }
 
 export default HomePage;
