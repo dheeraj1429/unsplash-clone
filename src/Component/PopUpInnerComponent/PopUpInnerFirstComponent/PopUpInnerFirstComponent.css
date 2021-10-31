@@ -3,17 +3,19 @@
 }
 
 .PopUpInnerDiv > div {
-  margin: 0 3rem;
+  /* margin: 0 3rem; */
+  padding: 0 3rem;
 }
 
 .PopUpContentDiv h3 {
-  margin-bottom: 1.3rem;
-  font-size: 1rem;
+  margin: 1.3rem 0;
+  font-size: 1.2rem;
 }
 
 .PopUpContentDiv p {
-  font: 1.3rem;
+  width: max-content;
   color: var(--loveGrayOne);
   margin: 0.8rem 0 !important;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 1.2rem;
 }

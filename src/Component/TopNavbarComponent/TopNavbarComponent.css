@@ -43,3 +43,7 @@
   margin: 0 2rem;
   cursor: pointer;
 }
+
+.NotifecationDiv {
+  position: relative;
+}
