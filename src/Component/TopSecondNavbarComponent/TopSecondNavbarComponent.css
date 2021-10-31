@@ -1,6 +1,10 @@
 .SecondNavbarDiv {
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 78px;
+  background-color: var(--bgColor);
+  z-index: 3;
 }
 
 .SecondNavbarDiv ul {

@@ -1,3 +1,5 @@
+import { Route, Switch } from "react-router";
+
 import HomePage from "./Pages/HomePage/HomePage";
 import TopNavbarComponent from "./Component/TopNavbarComponent/TopNavbarComponent";
 import TopSecondNavbarComponent from "./Component/TopSecondNavbarComponent/TopSecondNavbarComponent";
@@ -12,9 +14,13 @@ function App() {
       <TopSecondNavbarComponent />
       {/* Navbar */}
 
+      {/* Route */}
       {/* Pages */}
-      <HomePage />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+      </Switch>
       {/* Pages */}
+      {/* Route */}
 
       {/* Footer */}
       {/* Footer */}

@@ -48,10 +48,17 @@ const initalState = {
   },
 
   navBarUserContent: [{ title: "View profile" }, { title: "Stats" }, { title: "Account settings" }],
+
+  imageCollectionData: [],
 };
 
 const userReducer = (state = initalState, action) => {
   switch (action.type) {
+    case ACTION_TYPE.SET_DATA:
+      return {
+        ...state,
+        imageCollectionData: [...state.imageCollectionData, { ...action.payload }],
+      };
     default:
       return state;
   }
