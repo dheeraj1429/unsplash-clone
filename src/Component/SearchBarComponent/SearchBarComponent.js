@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchData } from "../../Redux/Action/action";
+import { searchData, showNavbarDivBox } from "../../Redux/Action/action";
 
 import "./SearchBarComponent.css";
 
@@ -14,7 +14,6 @@ function SearchBarComponent(props) {
 
   const SendSearchDataHandler = function () {
     dispatch(searchData(SearchDataInput));
-    setSearchDataInput("");
   };
 
   return (

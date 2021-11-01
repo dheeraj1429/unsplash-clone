@@ -4,6 +4,10 @@ import HomePage from "./Pages/HomePage/HomePage";
 import TopNavbarComponent from "./Component/TopNavbarComponent/TopNavbarComponent";
 import TopSecondNavbarComponent from "./Component/TopSecondNavbarComponent/TopSecondNavbarComponent";
 
+import SignInAndLoginComponent from "./Component/SignInAndSignOutComponent/SignInAndLoginComponent";
+
+import { firestore } from "./Component/Firebase.Utile/Firebase.util";
+
 import "./App.css";
 
 function App() {
@@ -18,6 +22,7 @@ function App() {
       {/* Pages */}
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/user/LogIn" component={SignInAndLoginComponent} />
       </Switch>
       {/* Pages */}
       {/* Route */}

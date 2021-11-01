@@ -51,6 +51,7 @@ const initalState = {
 
   imageCollectionData: [],
   SearchDataCollection: [],
+  ShowNavBarDivBox: [],
 };
 
 const userReducer = (state = initalState, action) => {
