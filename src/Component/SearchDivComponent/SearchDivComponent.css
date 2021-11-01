@@ -1,10 +1,45 @@
 .SearchDivBox {
   width: 100%;
-  height: 40vh;
+  height: auto;
   position: absolute;
   top: 60px;
   left: 0;
   background-color: var(--mainColor);
   border-radius: 5px;
   box-shadow: 0 8px 16px #00000029;
+  padding: 1.5rem;
+}
+
+.SearchDivBoxContent h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.Recent_Search_Cover_div {
+  display: flex;
+}
+
+.Recent_Search_Cover_div_First {
+  display: flex;
+}
+
+.Recent_Search_Cover_div_First p {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.Recent_Search_div {
+  width: auto;
+  border: 1px solid var(--smoothGray);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 1rem 0 0;
+  padding: 0.5rem 1.5rem;
+}
+
+.SearchDivBoxContent p {
+  font-size: 1rem;
+  color: var(--loveGray);
 }

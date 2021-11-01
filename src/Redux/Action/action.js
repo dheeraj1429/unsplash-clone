@@ -6,3 +6,16 @@ export const setData = (data) => {
     payload: data,
   };
 };
+
+export const searchData = function (data) {
+  return {
+    type: ACTION_TYPE.SEARCH_DATA,
+    payload: data,
+  };
+};
+
+export const removeSearchData = function () {
+  return {
+    type: ACTION_TYPE.REMOVE_SEARCH_DATA,
+  };
+};

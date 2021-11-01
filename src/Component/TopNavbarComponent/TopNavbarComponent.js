@@ -31,13 +31,10 @@ function TopNavbarComponent() {
         </Link>
       </div>
 
-      <div
-        className="SearchDivContainer"
-        onClick={() => (ShowHiddenDiv.ShowDiv == false ? setShowHiddenDiv({ ShowDiv: true }) : setShowHiddenDiv({ ShowDiv: false }))}
-      >
+      <div className="SearchDivContainer">
         <SearchBarComponent class={"Round"} />
 
-        {ShowHiddenDiv.ShowDiv == true ? <SearchDivComponent /> : null}
+        <SearchDivComponent />
       </div>
 
       <div className="TopNavbarContent">

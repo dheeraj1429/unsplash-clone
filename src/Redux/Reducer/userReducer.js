@@ -50,6 +50,7 @@ const initalState = {
   navBarUserContent: [{ title: "View profile" }, { title: "Stats" }, { title: "Account settings" }],
 
   imageCollectionData: [],
+  SearchDataCollection: [],
 };
 
 const userReducer = (state = initalState, action) => {
@@ -59,6 +60,24 @@ const userReducer = (state = initalState, action) => {
         ...state,
         imageCollectionData: [...state.imageCollectionData, { ...action.payload }],
       };
+
+    case ACTION_TYPE.SEARCH_DATA:
+      return {
+        ...state,
+        SearchDataCollection: [
+          ...state.SearchDataCollection,
+          {
+            data: action.payload,
+          },
+        ],
+      };
+
+    case ACTION_TYPE.REMOVE_SEARCH_DATA:
+      return {
+        ...state,
+        SearchDataCollection: [],
+      };
+
     default:
       return state;
   }
