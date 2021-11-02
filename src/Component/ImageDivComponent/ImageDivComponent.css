@@ -14,8 +14,59 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.ImgBox > div {
+  width: 490px;
+}
+
 .ImgBox img {
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.ImgInnerContentDiv {
+  position: relative;
+}
+
+.Like_div {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  background-color: #ffffffe6;
+  border: 1 px solid #0000;
+  box-shadow: 0 1px 2px #0000000f;
+  color: #767676;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  display: none;
+}
+
+.DownloadDiv {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 40px;
+  height: 30px;
+  background-color: #ffffffe6;
+  border: 1 px solid #0000;
+  box-shadow: 0 1px 2px #0000000f;
+  color: #767676;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  display: none;
+}
+
+.ShowIcon__Class {
+  display: flex;
+}
+
+.ImgInnerContentDiv img {
+  cursor: zoom-in;
 }
 
 @media (max-width: 1200px) {

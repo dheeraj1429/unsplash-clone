@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setData } from "../../Redux/Action/action";
+import { setDataOne, setDataTwo, setDataThree } from "../../Redux/Action/action";
 
 import "./ImageDivComponent.css";
 
 function ImageDivComponent() {
+  const [ShowIcon, setShowIcon] = useState(false);
+  const selector = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const res = async () => {
-    await fetch(`https://api.unsplash.com/photos/?client_id=k-2phInFwSmbdSL_ptLu-5XTopHSkaFyGip_HtlD0EU`)
+
+  const apiDataFirst = `https://pixabay.com/api/?key=22490979-1f9ed0f6cf9068fab5840a079&q=&image_type=photos=true`;
+  const apiDataSecond = `https://pixabay.com/api/?key=22490979-1f9ed0f6cf9068fab5840a079&q=nature&image_type=photos=true`;
+  const apiDataThird = `https://pixabay.com/api/?key=22490979-1f9ed0f6cf9068fab5840a079&q=flower&image_type=photos=true`;
+
+  const resFunction = async (api, event) => {
+    await fetch(api)
       .then((res) => res.json())
-      .then((data) => dispatch(setData(data)));
+      .then((data) => dispatch(event(data)));
   };
+
   useEffect(() => {
-    res();
+    // res();
+    resFunction(apiDataFirst, setDataOne);
+    resFunction(apiDataSecond, setDataTwo);
+    resFunction(apiDataThird, setDataThree);
   }, []);
 
   return (
     <div className="ImageDivContainer">
       <div className="Container">
         <div className="ImgBox">
-          <div>
-            <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-            <img src="https://images.unsplash.com/photo-1635598786348-9f9cbcaa66dc?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1635510890037-29d55fc3492e?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1635343407315-3bcf1b1f5524?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-          </div>
+          <div>{selector ? selector.imageCollectionDataFirst.map((el) => el.hits.map((el) => <img src={el.largeImageURL} />)) : null}</div>
+          <div>{selector ? selector.imageCollectionDataSecond.map((el) => el.hits.map((el) => <img src={el.largeImageURL} />)) : null}</div>
+          <div>{selector ? selector.imageCollectionDataThird.map((el) => el.hits.map((el) => <img src={el.largeImageURL} />)) : null}</div>
         </div>
       </div>
     </div>

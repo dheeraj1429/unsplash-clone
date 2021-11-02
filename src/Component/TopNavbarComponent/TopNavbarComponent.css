@@ -10,6 +10,22 @@
 
 .LogoDiv {
   margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LogoDiv > div {
+  margin-left: 0.5rem;
+}
+
+.LogoDiv h3 {
+  font-size: 0.9rem;
+}
+
+.LogoDiv p {
+  font-size: 0.8rem;
+  width: max-content;
 }
 
 .NavLinkDiv {

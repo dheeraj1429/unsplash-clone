@@ -47,17 +47,31 @@ const initalState = {
     ],
   },
 
-  imageCollectionData: [],
+  imageCollectionDataFirst: [],
+  imageCollectionDataSecond: [],
+  imageCollectionDataThird: [],
   SearchDataCollection: [],
   ShowNavBarDivBox: [],
 };
 
 const userReducer = (state = initalState, action) => {
   switch (action.type) {
-    case ACTION_TYPE.SET_DATA:
+    case ACTION_TYPE.SET_DATA_FIRST:
       return {
         ...state,
-        imageCollectionData: [...state.imageCollectionData, { ...action.payload }],
+        imageCollectionDataFirst: [{ ...action.payload }],
+      };
+
+    case ACTION_TYPE.SET_DATA_SECOND:
+      return {
+        ...state,
+        imageCollectionDataSecond: [{ ...action.payload }],
+      };
+
+    case ACTION_TYPE.SET_DATA_THIRD:
+      return {
+        ...state,
+        imageCollectionDataThird: [{ ...action.payload }],
       };
 
     case ACTION_TYPE.SEARCH_DATA:

@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import "./LogInComponent.css";
 
 function LogInComponent() {
+  const [ErrMassage, setErrMassage] = useState("");
   const history = useHistory();
 
   const [UserData, setUserData] = useState({
@@ -33,7 +34,10 @@ function LogInComponent() {
           history.push("/");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        const { code, name, customData } = err;
+        setErrMassage(code);
+      });
   };
 
   return (
@@ -44,7 +48,7 @@ function LogInComponent() {
           <input type="email" name="email" placeholder="Enter your email" value={UserData.email} onChange={ChangeEventValueHandler} />
           <label>Password</label>
           <input type="password" name="password" placeholder="password" value={UserData.password} onChange={ChangeEventValueHandler} />
-
+          <p>{ErrMassage ? ErrMassage : null}</p>
           <CustomButtonComponent InnerText={"Log In"} ButtonClass={"Log_In_Button"} onClick={LogInButtonHandler} />
         </form>
         <div className="OtherSingInOption">

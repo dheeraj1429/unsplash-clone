@@ -9,7 +9,7 @@ import "./SingInComponent.css";
 
 function SingInComponent() {
   const history = useHistory();
-
+  const [ErrMassage, setErrMassage] = useState("");
   const [UserValue, setUserValue] = useState({
     email: "",
     password: "",
@@ -32,11 +32,13 @@ function SingInComponent() {
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
         if (user) {
-          console.log(user);
           history.push("/");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        const { name, code, customData } = err;
+        setErrMassage(code);
+      });
   };
 
   return (
@@ -51,6 +53,8 @@ function SingInComponent() {
 
           <label>Password</label>
           <input type="password" name="password" placeholder="password" value={UserValue.password} onChange={ChangeUserVaule} />
+
+          <p>{ErrMassage ? ErrMassage : null}</p>
 
           <CustomButtonComponent InnerText={"Sign In"} ButtonClass={"Sign_In_Botton"} onClick={SignInUserHandler} />
         </form>
