@@ -2,9 +2,18 @@ import React, { useState, useEffect } from "react";
 
 import PopUpInnerFirstComponent from "../PopUpInnerComponent/PopUpInnerFirstComponent/PopUpInnerFirstComponent";
 
+import { auth } from "../Firebase.Utile/Firebase.util";
+import { useHistory } from "react-router";
+
 import "./PopUpComponent.css";
 
-function PopUpcomponent({ ContentData, ClassData, SideBarContentPopUp }) {
+function PopUpcomponent({ ContentData, ClassData, SideBarContentPopUp, userName }) {
+  const history = useHistory();
+
+  if (userName !== null) {
+    history.push("/");
+  }
+
   const [CollectionData, setCollectionData] = useState({
     MegaNavCollection: {},
     UserCollectionContent: {},
@@ -37,7 +46,19 @@ function PopUpcomponent({ ContentData, ClassData, SideBarContentPopUp }) {
         <div className="ArrowLine"></div>
 
         <div className="PopUpInnerContent">
-          <PopUpInnerFirstComponent InnerData={CollectionData.UserCollectionContent[0]} />
+          {userName ? (
+            <div className="User_Content_data">
+              <p>{userName.email}</p>
+              <p
+                onClick={() => auth.signOut()}
+                style={{
+                  cursor: "pointer",
+                }}
+              >
+                Log Out
+              </p>
+            </div>
+          ) : null}
         </div>
       </div>
     );

@@ -10,10 +10,10 @@ function PopUpInnerFirstComponent({ InnerData }) {
         {InnerData !== undefined
           ? InnerData.map((el) =>
               el.heading ? (
-                <h3>{el.heading}</h3>
+                <h3 key={el.heading}>{el.heading}</h3>
               ) : (
                 <Link to={el.title.replaceAll(" ", "_")}>
-                  <p>{el.title}</p>
+                  <p key={el.title}>{el.title}</p>
                 </Link>
               )
             )

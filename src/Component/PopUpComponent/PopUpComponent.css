@@ -37,3 +37,11 @@
 .PopUpInnerContent {
   display: flex;
 }
+
+.User_Content_data p {
+  width: max-content;
+  color: var(--loveGrayOne);
+  margin: 0.5rem 1rem !important;
+  font-weight: 500;
+  font-size: 1.2rem;
+}

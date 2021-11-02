@@ -15,6 +15,34 @@ const App = {
   appId: "1:14226727256:web:e1656f05f7adc58472c52d",
 };
 
+// create user profile into the firestore database
+///////////////////////////////////////////////////////
+
+export const CreateUserProfileDocument = async (userAuth, otherData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const EntryDate = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        EntryDate,
+        ...otherData,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+};
+
+// Initialize App
+//////////////////////////////////////
 firebase.initializeApp(App);
 
 export const auth = firebase.auth();
@@ -22,7 +50,6 @@ export const firestore = firebase.firestore();
 
 // sing in with google
 /////////////////////////////////////////
-
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);

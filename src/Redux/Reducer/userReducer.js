@@ -47,8 +47,6 @@ const initalState = {
     ],
   },
 
-  navBarUserContent: [{ title: "View profile" }, { title: "Stats" }, { title: "Account settings" }],
-
   imageCollectionData: [],
   SearchDataCollection: [],
   ShowNavBarDivBox: [],
