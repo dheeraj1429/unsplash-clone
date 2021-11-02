@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setDataOne, setDataTwo, setDataThree } from "../../Redux/Action/action";
+import { setDataOne, setDataTwo, setDataThree, selectedImages, OpenModelTab } from "../../Redux/Action/action";
 
 import "./ImageDivComponent.css";
 
 function ImageDivComponent() {
-  const [ShowIcon, setShowIcon] = useState(false);
   const selector = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -20,7 +19,6 @@ function ImageDivComponent() {
   };
 
   useEffect(() => {
-    // res();
     resFunction(apiDataFirst, setDataOne);
     resFunction(apiDataSecond, setDataTwo);
     resFunction(apiDataThird, setDataThree);
@@ -30,9 +28,51 @@ function ImageDivComponent() {
     <div className="ImageDivContainer">
       <div className="Container">
         <div className="ImgBox">
-          <div>{selector ? selector.imageCollectionDataFirst.map((el) => el.hits.map((el) => <img src={el.largeImageURL} />)) : null}</div>
-          <div>{selector ? selector.imageCollectionDataSecond.map((el) => el.hits.map((el) => <img src={el.largeImageURL} />)) : null}</div>
-          <div>{selector ? selector.imageCollectionDataThird.map((el) => el.hits.map((el) => <img src={el.largeImageURL} />)) : null}</div>
+          <div>
+            {selector
+              ? selector.imageCollectionDataFirst.map((el) =>
+                  el.hits.map((el) => (
+                    <img
+                      src={el.largeImageURL}
+                      onClick={() => {
+                        dispatch(selectedImages(el));
+                        dispatch(OpenModelTab(true));
+                      }}
+                    />
+                  ))
+                )
+              : null}
+          </div>
+          <div>
+            {selector
+              ? selector.imageCollectionDataSecond.map((el) =>
+                  el.hits.map((el) => (
+                    <img
+                      src={el.largeImageURL}
+                      onClick={() => {
+                        dispatch(selectedImages(el));
+                        dispatch(OpenModelTab(true));
+                      }}
+                    />
+                  ))
+                )
+              : null}
+          </div>
+          <div>
+            {selector
+              ? selector.imageCollectionDataThird.map((el) =>
+                  el.hits.map((el) => (
+                    <img
+                      src={el.largeImageURL}
+                      onClick={() => {
+                        dispatch(selectedImages(el));
+                        dispatch(OpenModelTab(true));
+                      }}
+                    />
+                  ))
+                )
+              : null}
+          </div>
         </div>
       </div>
     </div>

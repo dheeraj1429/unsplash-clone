@@ -33,3 +33,17 @@ export const removeSearchData = function () {
     type: ACTION_TYPE.REMOVE_SEARCH_DATA,
   };
 };
+
+export const selectedImages = function (data) {
+  return {
+    type: ACTION_TYPE.SELECTED_IMAGES,
+    payload: data,
+  };
+};
+
+export const OpenModelTab = function (data) {
+  return {
+    type: ACTION_TYPE.OPEN_MODEL_TAB,
+    payload: data,
+  };
+};

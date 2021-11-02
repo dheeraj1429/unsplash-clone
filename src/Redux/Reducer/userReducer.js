@@ -52,6 +52,8 @@ const initalState = {
   imageCollectionDataThird: [],
   SearchDataCollection: [],
   ShowNavBarDivBox: [],
+  SelectedImages: null,
+  OpenModelWindow: false,
 };
 
 const userReducer = (state = initalState, action) => {
@@ -89,6 +91,18 @@ const userReducer = (state = initalState, action) => {
       return {
         ...state,
         SearchDataCollection: [],
+      };
+
+    case ACTION_TYPE.SELECTED_IMAGES:
+      return {
+        ...state,
+        SelectedImages: [action.payload],
+      };
+
+    case ACTION_TYPE.OPEN_MODEL_TAB:
+      return {
+        ...state,
+        OpenModelWindow: action.payload,
       };
 
     default:

@@ -7,6 +7,7 @@
 .Container {
   max-width: 1500px;
   margin: auto;
+  position: relative;
 }
 
 .ImageDivContainer .ImgBox {
@@ -21,6 +22,7 @@
 .ImgBox img {
   margin-bottom: 0.5rem;
   width: 100%;
+  cursor: zoom-in;
 }
 
 .ImgInnerContentDiv {

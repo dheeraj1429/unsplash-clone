@@ -1,0 +1,57 @@
+.ImgModelDiv {
+  width: 1600px;
+  margin: auto;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px #00000026;
+  padding: 2rem;
+}
+
+.ImgModelDiv img {
+  width: auto;
+  height: 500px;
+}
+
+.ImgModelDiv .fa-times {
+  cursor: pointer;
+}
+
+.ModelInner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Img__Details {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.Img__Details > div {
+  margin-right: 6rem;
+}
+
+.Img__Details > div h3 {
+  font-size: 1rem;
+  color: var(--loveGray);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.User_Details p {
+  color: var(--loveGray);
+  font-size: 0.9rem;
+  margin: 0.6rem 0;
+}
+
+.User_Details i {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
