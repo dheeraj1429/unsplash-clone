@@ -9,13 +9,16 @@ function SingInComponent() {
     <div className="SignInDiv">
       <div className="SignInContainer">
         <form>
+          <label>Name</label>
+          <input type="text" placeholder="Full name" />
+
           <label>Email</label>
           <input type="email" placeholder="Enter your email" />
 
           <label>Password</label>
           <input type="password" placeholder="password" />
 
-          <CustomButtonComponent />
+          <CustomButtonComponent InnerText={"Sign In"} ButtonClass={"Sign_In_Botton"} />
         </form>
       </div>
     </div>

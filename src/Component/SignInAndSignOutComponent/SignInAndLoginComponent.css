@@ -6,6 +6,33 @@
   align-items: center;
 }
 
-.SignInAndLoginDiv .Container {
+.SignInAndLoginDiv .Container .FlexDiv {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginIcon__Icon {
+  text-align: center;
+}
+
+.LoginIcon__Icon img {
+  width: 60px;
+}
+
+.LoginIcon__Icon p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: var(--loveGray);
+}
+
+.Sign_In_And_Login_Options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sign_In_And_Login_Options p {
+  margin-left: 0.5rem;
+  cursor: pointer;
 }

@@ -2,10 +2,10 @@ import React from "react";
 
 import "./CustomButtonComponent.css";
 
-function CustomButtonComponent() {
+function CustomButtonComponent({ InnerText, ButtonClass }) {
   return (
-    <button type="button" className="Btn_Button">
-      Sign In
+    <button type="button" className={ButtonClass ? `Btn_Button ${ButtonClass}` : "Btn_Button"}>
+      {InnerText}
     </button>
   );
 }

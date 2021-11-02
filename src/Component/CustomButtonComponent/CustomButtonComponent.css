@@ -2,9 +2,19 @@
   width: 100%;
   margin: 1rem 0;
   height: 45px;
-  background-color: #000;
   border: none;
   color: var(--mainColor);
   border-radius: 5px;
   cursor: pointer;
+}
+
+.Sign_In_Botton {
+  background-color: #000;
+}
+.Log_In_Button {
+  background-color: #000;
+}
+
+.Google_SignIn_Button {
+  background-color: #1771e6;
 }
